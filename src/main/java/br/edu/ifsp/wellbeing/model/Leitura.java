@@ -1,15 +1,17 @@
 package br.edu.ifsp.wellbeing.model;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class Leitura {
-    private Date dataEntrada;
+    private LocalDate dataEntrada;
     private double valor;
-    private String descricao, hora;
+    private String descricao;
+    private LocalTime hora;
     ArrayList<Leitura> leituras;
 
-    public Leitura(Date dataEntrada, double valor, String descricao, String hora) {
+    public Leitura (LocalDate dataEntrada, double valor, String descricao, LocalTime hora) {
         this.dataEntrada = dataEntrada;
         this.valor = valor;
         this.descricao = descricao;
@@ -22,11 +24,11 @@ public class Leitura {
         return "Leitura do sensor no paciente \n[Descricao=" + descricao + "\nDataEntrada=" + dataEntrada + "\nValor=" + valor + "]";
     }
 
-    public Date getDataEntrada() {
+    public LocalDate getDataEntrada() {
         return dataEntrada;
     }
 
-    public void setDataEntrada(Date dataEntrada) {
+    public void setDataEntrada (LocalDate dataEntrada) {
         this.dataEntrada = dataEntrada;
     }
 
@@ -46,13 +48,12 @@ public class Leitura {
         this.descricao = descricao;
     }
 
-    public String getHora() {
+    public LocalTime getHora() {
         return hora;
     }
 
-    public void setHora(String hora) {
+    public void setHora(LocalTime hora) {
         this.hora = hora;
     }
-
     
 }
