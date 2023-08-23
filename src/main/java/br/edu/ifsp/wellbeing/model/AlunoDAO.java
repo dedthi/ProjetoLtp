@@ -1,6 +1,7 @@
 package br.edu.ifsp.wellbeing.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import br.edu.ifsp.wellbeing.Database;
 
@@ -45,4 +46,5 @@ public class AlunoDAO {
     public void update(Aluno toUpdate){
         // Sem implementação
     }
+
 }

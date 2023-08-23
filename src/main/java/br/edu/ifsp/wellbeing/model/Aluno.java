@@ -8,7 +8,6 @@ public class Aluno extends Usuario implements AtribuicaoSensores {
         this.endereco = endereco;
         this.prontuario = prontuario;
         this.email = email;
-        
     }
 
     //métodos da classe Interface AtribuicaoSensores
