@@ -9,7 +9,7 @@ import br.edu.ifsp.wellbeing.Database;
 public class WellbeingApiApplication {
 
 	public static void main(String[] args) {
-		Database.init();
+		Database.initAlunos();
 		SpringApplication.run(WellbeingApiApplication.class, args);
 	}
 }

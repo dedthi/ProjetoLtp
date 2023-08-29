@@ -12,7 +12,7 @@ public class LeituraDAO {
     public Database getConnection(){
         if(this.db == null){
             Database db = new Database();
-            db.init();
+            db.initLeituras();
             this.db = db;
         }
         return this.db;

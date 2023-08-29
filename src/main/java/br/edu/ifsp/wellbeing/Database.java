@@ -15,17 +15,20 @@ public class Database {
     private static ArrayList<Relatorio> relatorios;
     private static ArrayList<Leitura> leituras;
 
-    public Database(){
-        alunos = new ArrayList<>();
-        sensores = new ArrayList<>();
-        relatorios = new ArrayList<>();
-        leituras = new ArrayList<>();
-    }
+    // public Database(){
+    //     alunos = new ArrayList<>();
+    //     sensores = new ArrayList<>();
+    //     relatorios = new ArrayList<>();
+    //     leituras = new ArrayList<>();
+    // }
     
-    public static void init(){
+    public static void initAlunos(){
+        alunos = new ArrayList<>();
         alunos.add(new Aluno("Marcelo", "734.474.247-02", "Planejada Vista", "BP248376-X", "marcelinho.paulo@gmail.com"));
-        sensores.add(new Sensor("BP47295", 90.00, null, "Cardiovascular", null, null));
-        relatorios.add(new Relatorio("Paciente está com crise de ansiedade", null, null));
+        //sensores.add(new Sensor("BP47295", 90.00, null, "Cardiovascular", null, null));
+    }
+
+    public static void initLeituras(){
         leituras.add(new Leitura(LocalDate.of(2023, 8, 23), 200.0, "null", LocalTime.of(12, 00, 10)));
     }
 
