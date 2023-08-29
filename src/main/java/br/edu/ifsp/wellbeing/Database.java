@@ -3,7 +3,6 @@ package br.edu.ifsp.wellbeing;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.Date;
 
 import br.edu.ifsp.wellbeing.model.Aluno;
 import br.edu.ifsp.wellbeing.model.Leitura;
@@ -11,10 +10,10 @@ import br.edu.ifsp.wellbeing.model.Relatorio;
 import br.edu.ifsp.wellbeing.model.Sensor;
 
 public class Database {
-    private ArrayList<Sensor> sensores;
-    private ArrayList<Aluno> alunos;
-    private ArrayList<Relatorio> relatorios;
-    private ArrayList<Leitura> leituras;
+    private static ArrayList<Sensor> sensores;
+    private static ArrayList<Aluno> alunos;
+    private static ArrayList<Relatorio> relatorios;
+    private static ArrayList<Leitura> leituras;
 
     public Database(){
         alunos = new ArrayList<>();
@@ -23,7 +22,7 @@ public class Database {
         leituras = new ArrayList<>();
     }
     
-    public void init(){
+    public static void init(){
         alunos.add(new Aluno("Marcelo", "734.474.247-02", "Planejada Vista", "BP248376-X", "marcelinho.paulo@gmail.com"));
         sensores.add(new Sensor("BP47295", 90.00, null, "Cardiovascular", null, null));
         relatorios.add(new Relatorio("Paciente está com crise de ansiedade", null, null));
@@ -66,7 +65,7 @@ public class Database {
     public ArrayList<Aluno> recupAlunos(){
         return alunos;
     }
-     public ArrayList<Relatorio> recupRelatorios(){
+     public static ArrayList<Relatorio> recupRelatorios(){
         return relatorios;
     }
 }
