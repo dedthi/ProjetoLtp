@@ -1,4 +1,4 @@
-package br.edu.ifsp.wellbeing.wellbeingapi;
+package br.edu.ifsp.wellbeing;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

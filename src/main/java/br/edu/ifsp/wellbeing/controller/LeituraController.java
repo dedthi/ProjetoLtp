@@ -6,20 +6,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class LeituraController {
-      //https://localhost:8080/exemplo
-      @GetMapping("/exemplo")
+      
+      @GetMapping("/leitura")
       public String endPoint1(){
           return "Exemplo API REST";
       }
   
-      @GetMapping("/exemplo/{parametro}")
-      public String endPoint2(
-              //https://localhost:8080/exemplo/10
-              @PathVariable("parametro")
-              Integer valor // -> 10
-      ){
-          return "Dado recebido: "+valor;
-      }
+    //   @GetMapping("/exemplo/{parametro}")
+    //   public String endPoint2(
+    //           //https://localhost:8080/exemplo/10
+    //           @PathVariable("parametro")
+    //           Integer valor // -> 10
+    //   ){
+    //       return "Dado recebido: "+valor;
+    //   }
   
   
 //     @GetMapping("/exemplo/user")
