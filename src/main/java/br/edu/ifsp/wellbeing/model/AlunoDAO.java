@@ -1,7 +1,6 @@
 package br.edu.ifsp.wellbeing.model;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import br.edu.ifsp.wellbeing.Database;
 
@@ -12,7 +11,7 @@ public class AlunoDAO {
     public Database getConnection(){
         if(this.db == null){
             Database db = new Database();
-            db.init();
+            db.initAlunos();
             this.db = db;
         }
         return this.db;

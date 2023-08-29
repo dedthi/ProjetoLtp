@@ -11,7 +11,7 @@ public class SensorDAO {
     public Database getConnection(){
         if(this.db == null){
             Database db = new Database();
-            db.init();
+            db.initSensores();
             this.db = db;
         }
         return this.db;

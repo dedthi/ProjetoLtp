@@ -24,9 +24,6 @@ public class Relatorio{
         }
     }
 
-    public static void atualizarRelatorio(){
-
-    }
     
     public String toString() {
         return "Relatorio: \n[Descricao= " + descricao + "\nData= " + data + "\nStatus= " + status + "]";

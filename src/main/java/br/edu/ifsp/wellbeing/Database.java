@@ -25,13 +25,21 @@ public class Database {
     public static void initAlunos(){
         alunos = new ArrayList<>();
         alunos.add(new Aluno("Marcelo", "734.474.247-02", "Planejada Vista", "BP248376-X", "marcelinho.paulo@gmail.com"));
-        //sensores.add(new Sensor("BP47295", 90.00, null, "Cardiovascular", null, null));
     }
 
     public static void initLeituras(){
+        leituras = new ArrayList<>();
         leituras.add(new Leitura(LocalDate.of(2023, 8, 23), 200.0, "null", LocalTime.of(12, 00, 10)));
     }
 
+    public void initSensores(){
+        sensores = new ArrayList<>();
+        sensores.add(new Sensor("BP47295", 90.00, null, "Cardiovascular", null, null));
+    }
+
+    public void initRelatorios(){
+        relatorios = new ArrayList<>();
+    }
     public void addDadoSensor(Sensor novoSensor){
         sensores.add(novoSensor);
     }

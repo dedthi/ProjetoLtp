@@ -11,7 +11,7 @@ public class RelatorioDAO {
     public Database getConnection(){
         if(this.db == null){
             Database db = new Database();
-            db.init();
+            db.initRelatorios();
             this.db = db;
         }
         return this.db;
