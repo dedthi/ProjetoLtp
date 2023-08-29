@@ -34,7 +34,7 @@ public class Database {
 
     public void initSensores(){
         sensores = new ArrayList<>();
-        sensores.add(new Sensor("BP47295", 90.00, null, "Cardiovascular", null, null));
+        sensores.add(new Sensor("BP47295", 90.00, "Sensor X", "Cardiovascular", "02-08", "3 meses"));
     }
 
     public void initRelatorios(){
