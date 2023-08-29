@@ -14,6 +14,4 @@ public class AlunoController {
 	public ArrayList<Aluno> recuperarAlunos(){
 		return Database.recupAlunos();
 	}
-
-
 }

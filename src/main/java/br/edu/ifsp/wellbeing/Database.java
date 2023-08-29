@@ -62,7 +62,7 @@ public class Database {
     public ArrayList<Leitura> recupLeituras(){
         return leituras;
     }
-    public ArrayList<Aluno> recupAlunos(){
+    public static ArrayList<Aluno> recupAlunos(){
         return alunos;
     }
      public static ArrayList<Relatorio> recupRelatorios(){
