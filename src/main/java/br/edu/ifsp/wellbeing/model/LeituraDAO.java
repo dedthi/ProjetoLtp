@@ -2,6 +2,7 @@
 package br.edu.ifsp.wellbeing.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import br.edu.ifsp.wellbeing.Database;
 
@@ -46,6 +47,22 @@ public class LeituraDAO {
     public void update(Leitura toUpdate){
         // Sem implementação
     }
+
+    public Leitura getByDay(Integer dia){
+        // Pesquisa no banco leituras por dia
+        List<Leitura> todasLeituras = Database.recupLeituras();
+        System.out.println(todasLeituras);
+        for (Leitura leitura : todasLeituras) {
+            System.out.println(leitura.getDataEntrada().getDayOfMonth());
+            if(leitura.getDataEntrada().getDayOfMonth() == dia){
+                return leitura;
+            }
+        }
+        return null;
+        // retornnar as leituras
+    }
+
+    
 }
 
 

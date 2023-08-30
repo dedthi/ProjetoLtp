@@ -1,5 +1,6 @@
 package br.edu.ifsp.wellbeing;
 
+import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -50,7 +51,7 @@ public class Database {
     public void addDadoRelatorio(Relatorio novoRelatorio){
         relatorios.add(novoRelatorio);
     }
-    public void addDadoLeitura(Leitura novaLeitura){
+    public static void addDadoLeitura(Leitura novaLeitura){
         leituras.add(novaLeitura);
     }
 
@@ -70,7 +71,7 @@ public class Database {
     public ArrayList<Sensor> recupSensors(){
         return sensores;
     }
-    public ArrayList<Leitura> recupLeituras(){
+    public static ArrayList<Leitura> recupLeituras(){
         return leituras;
     }
     public static ArrayList<Aluno> recupAlunos(){
@@ -79,4 +80,5 @@ public class Database {
      public static ArrayList<Relatorio> recupRelatorios(){
         return relatorios;
     }
+
 }

@@ -8,6 +8,7 @@ public class WellbeingApiApplication {
 
 	public static void main(String[] args) {
 		Database.initAlunos();
+		Database.initLeituras();
 		SpringApplication.run(WellbeingApiApplication.class, args);
 	}
 }
