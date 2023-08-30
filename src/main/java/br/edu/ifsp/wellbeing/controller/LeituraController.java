@@ -12,14 +12,14 @@ public class LeituraController {
           return "Exemplo API REST";
       }
   
-    //  @GetMapping("/exemplo/{parametro}")
-    //   public String endPoint2(
-    //   //https://localhost:8080/exemplo/10
-    //           @PathVariable("parametro")
-    //           Integer valor // -> 10
-    //   ){
-    //       return "Dado recebido: "+valor;
-    //   }
+     @GetMapping("/exemplo/{dia}")
+      public String endPoint2(
+      //https://localhost:8080/exemplo/10
+              @PathVariable("dia")
+              Integer valor 
+      ){
+          return "Dado recebido: "+valor;
+      }
   
   
 //     @GetMapping("/exemplo/user")
