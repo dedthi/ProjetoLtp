@@ -26,6 +26,7 @@ public class Database {
     public static void initAlunos(){
         alunos = new ArrayList<>();
         alunos.add(new Aluno("Marcelo", "734.474.247-02", "Planejada Vista", "BP248376-X", "marcelinho.paulo@gmail.com"));
+        alunos.add(new Aluno("Vinicius", "444.333.111-15", "Rua y", "bp3333", "vinicius@gmail.com")); 
     }
 
     public static void initLeituras(){
@@ -44,7 +45,7 @@ public class Database {
     public void addDadoSensor(Sensor novoSensor){
         sensores.add(novoSensor);
     }
-    public void addDadoAluno(Aluno novoAluno){
+    public static void addDadoAluno(Aluno novoAluno){
         alunos.add(novoAluno);
     }
 
