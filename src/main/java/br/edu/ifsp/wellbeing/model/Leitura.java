@@ -16,7 +16,6 @@ public class Leitura {
         this.valor = valor;
         this.descricao = descricao;
         this.hora = hora;
-        leituras = new ArrayList<>();
     }
     
     @Override
