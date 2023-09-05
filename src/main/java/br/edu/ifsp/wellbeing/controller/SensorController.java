@@ -12,10 +12,15 @@ import br.edu.ifsp.wellbeing.Database;
 import br.edu.ifsp.wellbeing.model.Aluno;
 import br.edu.ifsp.wellbeing.model.AlunoDAO;
 import br.edu.ifsp.wellbeing.model.Sensor;
+import br.edu.ifsp.wellbeing.model.SensorDAO;
 
 @RestController
 public class SensorController {
     //vitor
 	//https://localhost:8080/cadastrar/sensor
-    
+    @PostMapping("/cadastrar/sensor")
+      public void addSensor(@RequestBody Sensor novoSensor){
+        Database.addDadoSensor(novoSensor);
+        
+      }
 }
