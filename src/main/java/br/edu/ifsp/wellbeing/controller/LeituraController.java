@@ -15,23 +15,20 @@ import br.edu.ifsp.wellbeing.model.LeituraDAO;
 @RestController
 public class LeituraController {
       
-      @PostMapping("/leitura/cadastrar")
-      public void addLeitura(@RequestBody Leitura novaleitura){
-        Database.addDadoLeitura(novaleitura);
-        
-      }
-
-
      @GetMapping("/leitura/{dia}")
-      public Leitura endPoint2(
+      public List<Leitura> endPoint2(
               @PathVariable("dia")
               Integer dia
       ){
         System.out.println(dia);
-        Leitura leituras = LeituraDAO.getInstance().getByDay(dia);
+        List<Leitura> leituras = LeituraDAO.getInstance().getByDay(dia);
          return leituras;
-        // List<Leitura> resultado = dadospordia(valor);
-          //return Database.recupLeituras();
+      }
+
+      @PostMapping("/leitura/cadastrar")
+      public void addLeitura(@RequestBody Leitura novaleitura){
+        Database.addDadoLeitura(novaleitura);
+        
       }
   
   
