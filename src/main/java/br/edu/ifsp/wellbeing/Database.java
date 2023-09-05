@@ -34,7 +34,7 @@ public class Database {
         leituras.add(new Leitura(LocalDate.of(2023, 8, 23), 200.0, "null", LocalTime.of(12, 00, 10)));
     }
 
-    public void initSensores(){
+    public static void initSensores(){
         sensores = new ArrayList<>();
         sensores.add(new Sensor("BP47295", 90.00, "Sensor X", "Cardiovascular", "02-08", "3 meses"));
     }
@@ -42,7 +42,7 @@ public class Database {
     public void initRelatorios(){
         relatorios = new ArrayList<>();
     }
-    public void addDadoSensor(Sensor novoSensor){
+    public static void addDadoSensor(Sensor novoSensor){
         sensores.add(novoSensor);
     }
     public static void addDadoAluno(Aluno novoAluno){

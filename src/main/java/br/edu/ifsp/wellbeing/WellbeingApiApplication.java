@@ -9,6 +9,7 @@ public class WellbeingApiApplication {
 	public static void main(String[] args) {
 		Database.initAlunos();
 		Database.initLeituras();
+		Database.initSensores();
 		SpringApplication.run(WellbeingApiApplication.class, args);
 	}
 }
