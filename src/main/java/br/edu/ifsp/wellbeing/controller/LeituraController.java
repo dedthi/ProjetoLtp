@@ -31,12 +31,15 @@ public class LeituraController {
         
       }
   
-      @PostMapping("/leitura/{hora}")
+      @GetMapping("/leitura/{dia}/{hora}")
       public Leitura endPoint3(
-        @PathVariable("hora") Integer hora) {
-          System.out.println(hora);
-          Leitura leituras = LeituraDAO.getInstance().getByHour(hora);
+        @PathVariable("dia") Integer dia,
+          @PathVariable("hora") Integer hora) {
+
+          System.out.println(dia+" \\ "+hora);
+          Leitura leituras = LeituraDAO.getInstance().getByDay(dia).getByHour(hora);
           return leituras; 
+
       }
       
 }

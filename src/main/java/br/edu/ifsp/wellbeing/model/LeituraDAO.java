@@ -69,10 +69,10 @@ public class LeituraDAO {
         List<Leitura> todasLeituras = getConnection().recupLeituras();
         System.out.println(todasLeituras);
         for (Leitura leitura : todasLeituras) {
-            int horaDaLeitura = leitura.getDataEntrada().getHour();
+            int horaDaLeitura = leitura.getHora().getHour();
             System.out.println(horaDaLeitura);
             if (horaDaLeitura == hora) {
-                return leitura;z
+                return leitura;
             }
         }
         return null;
