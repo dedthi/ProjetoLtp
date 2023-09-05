@@ -1,6 +1,7 @@
 package br.edu.ifsp.wellbeing.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import br.edu.ifsp.wellbeing.Database;
 
@@ -44,6 +45,20 @@ public class AlunoDAO {
 
     public void update(Aluno toUpdate){
         // Sem implementação
+    }
+
+    public Aluno getByName(String nome){
+        // Pesquisa no banco alunos por nome
+        List<Aluno> todosAlunos = Database.recupAlunos();
+        System.out.println(todosAlunos);
+        for (Aluno aluno : todosAlunos) {
+            System.out.println(aluno.getNome());
+            if(aluno.getNome().toLowerCase().equals(nome.toLowerCase())){
+                return aluno;
+            }
+        }
+        return null;
+        // retornnar as leituras
     }
 
 }
