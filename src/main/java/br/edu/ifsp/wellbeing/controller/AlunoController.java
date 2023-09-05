@@ -2,6 +2,7 @@ package br.edu.ifsp.wellbeing.controller;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,10 +23,17 @@ public class AlunoController {
 		return 	alunoDAO.read();
 	}
 
+	//https://localhost:8080/cadastrar/aluno
 	@PostMapping("/cadastrar/aluno")
 	public void addAluno(@RequestBody Aluno novoAluno) {
         Database.addDadoAluno(novoAluno);
     }
+
+	//https://localhost:8080/deletar/aluno
+	@DeleteMapping("/deletar/aluno")
+	public void delAluno(@RequestBody Aluno delAluno){
+		Database.delDadoAluno(delAluno);
+	}
 
 	//vitor
 	//https://localhost:8080/recuperar/{nome}

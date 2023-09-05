@@ -59,7 +59,7 @@ public class Database {
     public void delDadoSensor(Sensor delSensor){
         sensores.remove(delSensor);
     }
-    public void delDadoAluno(Aluno delAluno){
+    public static void delDadoAluno(Aluno delAluno){
         alunos.remove(delAluno);
     }
     public void delDadoRelatorio(Relatorio delRelatorio){
