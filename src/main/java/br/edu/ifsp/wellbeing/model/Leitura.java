@@ -9,7 +9,7 @@ public class Leitura {
     private double valor;
     private String descricao;
     private LocalTime hora;
-    ArrayList<Leitura> leituras;
+    
 
     public Leitura (LocalDate dataEntrada, double valor, String descricao, LocalTime hora) {
         this.dataEntrada = dataEntrada;
