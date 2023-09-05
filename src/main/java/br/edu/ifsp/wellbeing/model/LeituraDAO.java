@@ -62,7 +62,22 @@ public class LeituraDAO {
         // retornnar as leituras
     }
 
+    public Leitura getByHour(Integer hora) {
+        // Pesquisa no banco leituras por hora
+        List<Leitura> todasLeituras = getConnection().recupLeituras();
+        System.out.println(todasLeituras);
+        for (Leitura leitura : todasLeituras) {
+            int horaDaLeitura = leitura.getDataEntrada().getHour();
+            System.out.println(horaDaLeitura);
+            if (horaDaLeitura == hora) {
+                return leitura;z
+            }
+        }
+        return null;
+    }
     
+    
+
 }
 
 

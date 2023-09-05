@@ -34,5 +34,12 @@ public class LeituraController {
           //return Database.recupLeituras();
       }
   
-  
+      @PostMapping("/leitura/{hora}")
+      public Leitura endPoint3(
+        @PathVariable("hora") Integer hora) {
+          System.out.println(hora);
+          Leitura leituras = LeituraDAO.getInstance().getByHour(hora);
+          return leituras; 
+      }
+      
 }
