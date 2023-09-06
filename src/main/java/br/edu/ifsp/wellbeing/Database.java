@@ -67,7 +67,7 @@ public class Database {
     public void delDadoRelatorio(Relatorio delRelatorio){
         relatorios.remove(delRelatorio);
     }
-    public void delDadoLeitura(Leitura delLeitura){
+    public static void delDadoLeitura(Leitura delLeitura){
         leituras.remove(delLeitura);
     }
 
