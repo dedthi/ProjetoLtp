@@ -57,7 +57,7 @@ public class Database {
         leituras.add(novaLeitura);
     }
 
-    public void delDadoSensor(Sensor delSensor){
+    public static void delDadoSensor(Sensor delSensor){
         sensores.remove(delSensor);
     }
     public static void delDadoAluno(Aluno delAluno){
@@ -71,7 +71,7 @@ public class Database {
         leituras.remove(delLeitura);
     }
 
-    public ArrayList<Sensor> recupSensors(){
+    public static ArrayList<Sensor> recupSensores(){
         return sensores;
     }
     public static ArrayList<Leitura> recupLeituras(){

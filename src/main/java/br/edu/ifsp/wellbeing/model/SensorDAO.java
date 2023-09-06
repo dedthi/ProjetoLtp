@@ -33,7 +33,7 @@ public class SensorDAO {
     //recupera todas as listas
     public ArrayList<Sensor> read(){
         Database db = getConnection();
-        return db.recupSensors();
+        return db.recupSensores();
     }
 
     // remove um item do cadastro
