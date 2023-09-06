@@ -23,18 +23,24 @@ public class AlunoController {
 		return 	alunoDAO.read();
 	}
 
-	//https://localhost:8080/wellbeing/aluno/cadastrar
-	@PostMapping("wellbeing/aluno/cadastrar")
+	//https://localhost:8080/wellbeing/alunos/cadastrar
+	@PostMapping("wellbeing/alunos/cadastrar")
 	public void addAluno(@RequestBody Aluno novoAluno) {
         Database.addDadoAluno(novoAluno);
     }
 
-	//https://localhost:8080/wellbeing/aluno/deletar
-	@DeleteMapping("wellbeing/aluno/deletar")
-	public void delAluno(@RequestBody Aluno delAluno){
-		Database.delDadoAluno(delAluno);
-	}
-
+	//https://localhost:8080/wellbeing/alunos/deletar
+	@DeleteMapping("wellbeing/alunos/deletar/{nome}")
+	public Aluno delAluno(@PathVariable("nome") String nome){
+        List<Aluno> listaAlunos = Database.recupAlunos();
+        for (Aluno aluno : listaAlunos){
+            if(aluno.getNome().equals(nome)){
+                Database.delDadoAluno(aluno);
+                return aluno;
+            }
+        }
+        return null;
+	}   
 
 	//vitor
 	//https://localhost:8080/recuperar/{nome}
