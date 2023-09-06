@@ -30,7 +30,7 @@ public class LeituraController {
         Database.addDadoLeitura(novaleitura);
         
       }
-  
+  /* 
       @GetMapping("/leitura/{dia}/{hora}")
       public Leitura endPoint3(
         @PathVariable("dia") Integer dia,
@@ -41,5 +41,5 @@ public class LeituraController {
           return leituras; 
 
       }
-      
+      */
 }

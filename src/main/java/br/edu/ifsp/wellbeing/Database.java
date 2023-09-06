@@ -1,9 +1,9 @@
 package br.edu.ifsp.wellbeing;
 
-import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 import br.edu.ifsp.wellbeing.model.Aluno;
 import br.edu.ifsp.wellbeing.model.Leitura;
@@ -41,6 +41,7 @@ public class Database {
 
     public void initRelatorios(){
         relatorios = new ArrayList<>();
+        relatorios.add(new Relatorio("Paciente está com ansiedade", "27-08-2023", "Em análise"));
     }
     public static void addDadoSensor(Sensor novoSensor){
         sensores.add(novoSensor);
@@ -60,7 +61,8 @@ public class Database {
         sensores.remove(delSensor);
     }
     public static void delDadoAluno(Aluno delAluno){
-        alunos.remove(delAluno);
+        Predicate<Aluno> nomeDel = alunoLista -> alunoLista.getNome() == delAluno.getNome();
+		alunos.removeIf(nomeDel);
     }
     public void delDadoRelatorio(Relatorio delRelatorio){
         relatorios.remove(delRelatorio);

@@ -17,23 +17,24 @@ import br.edu.ifsp.wellbeing.model.AlunoDAO;
 public class AlunoController {
 	//thiago
 	//https://localhost:8080/listar/alunos
-    @GetMapping("/listar/alunos")
+    @GetMapping("wellbeing/alunos/listar")
 	public List<Aluno> recuperarAlunos(){
 		AlunoDAO alunoDAO = AlunoDAO.getInstance();
 		return 	alunoDAO.read();
 	}
 
-	//https://localhost:8080/cadastrar/aluno
-	@PostMapping("/cadastrar/aluno")
+	//https://localhost:8080/wellbeing/aluno/cadastrar
+	@PostMapping("wellbeing/aluno/cadastrar")
 	public void addAluno(@RequestBody Aluno novoAluno) {
         Database.addDadoAluno(novoAluno);
     }
 
-	//https://localhost:8080/deletar/aluno
-	@DeleteMapping("/deletar/aluno")
+	//https://localhost:8080/wellbeing/aluno/deletar
+	@DeleteMapping("wellbeing/aluno/deletar")
 	public void delAluno(@RequestBody Aluno delAluno){
 		Database.delDadoAluno(delAluno);
 	}
+
 
 	//vitor
 	//https://localhost:8080/recuperar/{nome}
