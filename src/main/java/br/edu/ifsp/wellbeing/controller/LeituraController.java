@@ -16,7 +16,7 @@ import br.edu.ifsp.wellbeing.model.LeituraDAO;
 @RestController
 public class LeituraController {
       //samuel
-     @GetMapping("/leitura/{dia}")
+     @GetMapping("wellbeing/leitura/{dia}")
       public List<Leitura> consultLeitura(
               @PathVariable("dia")
               Integer dia
@@ -26,13 +26,13 @@ public class LeituraController {
          return leituras;
       }
       //samuel
-      @PostMapping("/leitura/cadastrar")
+      @PostMapping("wellbeing/leitura/cadastrar")
       public void addLeitura(@RequestBody Leitura novaleitura){
         Database.addDadoLeitura(novaleitura);
         
       }
       //samuel
-      @DeleteMapping("/leitura/deletar/{dia}")
+      @DeleteMapping("wellbeing/leitura/deletar/{dia}")
       public Leitura deleteLeitura(
         @PathVariable("dia")
               Integer dia
