@@ -48,8 +48,9 @@ public class LeituraDAO {
         // Sem implementação
     }
 
+    //samuel
     public List<Leitura> getByDay(Integer dia){
-        // Pesquisa no banco leitura por dia
+        
         List<Leitura> todasLeituras = Database.recupLeituras();
         System.out.println(todasLeituras);
         List<Leitura> selecionadas = new ArrayList<>();
@@ -57,13 +58,11 @@ public class LeituraDAO {
             System.out.println(leitura.getDataEntrada().getDayOfMonth());
             if(leitura.getDataEntrada().getDayOfMonth() == dia){
                selecionadas.add(leitura);
-                // return leitura;
             }
         }
         return selecionadas;
-        // retornnar as leitura
     }
-
+   
     public Leitura getByHour(Integer hora) {
         // Pesquisa no banco leituras por hora
         List<Leitura> todasLeituras = getConnection().recupLeituras();
