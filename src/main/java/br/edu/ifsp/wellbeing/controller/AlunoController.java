@@ -56,8 +56,8 @@ public class AlunoController {
 	}
 
 	
-	// PostRelatorioAoAluno
-	public class RelatorioController {
+	// PostRelatorioAoAluno - Stein
+		public class RelatorioController {
 		private List<String> listaRelatoriosAlunos = new ArrayList<>();
 
 		@PostMapping("/wellbeing/relatorios")
@@ -68,3 +68,4 @@ public class AlunoController {
 	}
 
 }
+
