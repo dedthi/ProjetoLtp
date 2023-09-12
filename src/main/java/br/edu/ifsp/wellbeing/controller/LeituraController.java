@@ -50,8 +50,8 @@ public class LeituraController {
   }
 
   // Stein
-  
-@GetMapping("wellbeing/leitura/{dia}/{hora}")
+  //hora e dia
+@GetMapping("wellbeing/leitura/{dia}/{hora}") 
 public ResponseEntity<List<Leitura>> consultLeitura(
       @PathVariable("dia") Integer dia,
       @PathVariable("hora") Integer hora) {
