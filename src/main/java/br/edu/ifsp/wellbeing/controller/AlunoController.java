@@ -56,27 +56,4 @@ public class AlunoController {
 		return alunos;
 
 	}
-
-	// PostRelatorioAoAluno - Stein
-	public class RelatorioController {
-		private List<String> listaRelatoriosAlunos = new ArrayList<>();
-
-		@PostMapping("/wellbeing/relatorios")
-		public void adicionarRelatorio(@RequestBody Map<String, String> requestBody) {
-			String email = requestBody.get("email");
-			listaRelatoriosAlunos.add(email);
-		}
-	}
-
-	@DeleteMapping("/wellbeing/alunos/{email}/relatorios/{descricao}")
-	public ResponseEntity<String> deletarRelatorio(
-        @PathVariable String email,
-        @PathVariable String descricao) {
-    // Chame o DAO para excluir o relatório
-    AlunoDAO.excluirRelatorio(email, descricao);
-
-    // Retorne uma resposta com status 204 No Content para indicar sucesso na exclusão
-    return ResponseEntity.noContent().build();
-}
-
 }

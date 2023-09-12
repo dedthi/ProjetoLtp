@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.ifsp.wellbeing.Database;
-import br.edu.ifsp.wellbeing.model.Aluno;
-import br.edu.ifsp.wellbeing.model.AlunoDAO;
 import br.edu.ifsp.wellbeing.model.Sensor;
 import br.edu.ifsp.wellbeing.model.SensorDAO;;
 
