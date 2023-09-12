@@ -47,18 +47,25 @@ public class LeituraController {
           }
           return null;
         }
+      asdasdasd
+
+        //Stein
+        @GetMapping("/leitura/{dia}/{hora}/{aluno}")
+        public Leitura endPoint3(
+            @PathVariable("dia") Date dia,
+            @PathVariable("hora") Integer hora,
+            @PathVariable("aluno") String aluno) {
+            if (dia.before(new Date())) { 
+                throw new IllegalArgumentException("A data deve ser posterior à data atual");
+            }
+            if (aluno == null || aluno.isEmpty()) {
+                throw new IllegalArgumentException("O aluno deve ser especificado");
+            }
+            System.out.println(dia+" \\ "+hora+" \\ "+aluno);
+            Leitura leituras = LeituraDAO.getInstance().getByDay(dia).getByHour(hora).getByAluno(aluno);
+            return leituras; 
+        }
       
+}asdas 
 
-  /* 
-      @GetMapping("/leitura/{dia}/{hora}")
-      public Leitura endPoint3(
-        @PathVariable("dia") Integer dia,
-          @PathVariable("hora") Integer hora) {
 
-          System.out.println(dia+" \\ "+hora);
-          Leitura leituras = LeituraDAO.getInstance().getByDay(dia).getByHour(hora);
-          return leituras; 
-
-      }
-      */
-}
