@@ -1,7 +1,9 @@
 package br.edu.ifsp.wellbeing.controller;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.edu.ifsp.wellbeing.Database;
 import br.edu.ifsp.wellbeing.model.Leitura;
 import br.edu.ifsp.wellbeing.model.LeituraDAO;
+import br.edu.ifsp.wellbeing.model.Relatorio;
 
 @RestController
 public class LeituraController {
@@ -67,4 +70,7 @@ public ResponseEntity<List<Leitura>> consultLeitura(
     return ResponseEntity.ok(leituras);
   }
 
+ 
+
+  
 }

@@ -53,4 +53,7 @@ public class Relatorio{
         this.status = status;
     }
 
+
+    
+
 }

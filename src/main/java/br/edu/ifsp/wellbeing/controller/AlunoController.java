@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.edu.ifsp.wellbeing.Database;
 import br.edu.ifsp.wellbeing.model.Aluno;
 import br.edu.ifsp.wellbeing.model.AlunoDAO;
+import br.edu.ifsp.wellbeing.model.Relatorio;
 
 @RestController
 public class AlunoController {
@@ -55,9 +57,8 @@ public class AlunoController {
 
 	}
 
-	
 	// PostRelatorioAoAluno - Stein
-		public class RelatorioController {
+	public class RelatorioController {
 		private List<String> listaRelatoriosAlunos = new ArrayList<>();
 
 		@PostMapping("/wellbeing/relatorios")
@@ -67,5 +68,15 @@ public class AlunoController {
 		}
 	}
 
+	@DeleteMapping("/wellbeing/alunos/{email}/relatorios/{descricao}")
+	public ResponseEntity<String> deletarRelatorio(
+        @PathVariable String email,
+        @PathVariable String descricao) {
+    // Chame o DAO para excluir o relatório
+    AlunoDAO.excluirRelatorio(email, descricao);
+
+    // Retorne uma resposta com status 204 No Content para indicar sucesso na exclusão
+    return ResponseEntity.noContent().build();
 }
 
+}
