@@ -2,7 +2,15 @@ package br.edu.ifsp.wellbeing.model;
 
 import java.util.ArrayList;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+@Entity
 public class Relatorio{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String descricao;
     private String data;
     private String status;
@@ -23,7 +31,13 @@ public class Relatorio{
             leituras.toString();
         }
     }
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
     
     public String toString() {
         return "Relatorio: \n[Descricao= " + descricao + "\nData= " + data + "\nStatus= " + status + "]";
@@ -52,6 +66,8 @@ public class Relatorio{
     public void setStatus(String status) {
         this.status = status;
     }
+
+   
 
 
     

@@ -4,12 +4,20 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+// @Entity
 public class Leitura {
+    // @Id
+    // @GeneratedValue(strategy = GenerationType.IDENTITY)
+    // private Long id;
     private LocalDate dataEntrada;
     private double valor;
     private String descricao;
     private LocalTime hora;
-    
 
     public Leitura (LocalDate dataEntrada, double valor, String descricao, LocalTime hora) {
         this.dataEntrada = dataEntrada;
@@ -17,7 +25,13 @@ public class Leitura {
         this.descricao = descricao;
         this.hora = hora;
     }
-    
+    // public Long getId() {
+    //     return id;
+    // }
+
+    // public void setId(Long id) {
+    //     this.id = id;
+    // }
     @Override
     public String toString() {
         return "Leitura do sensor no paciente \n[Descricao=" + descricao + "\nDataEntrada=" + dataEntrada + "\nValor=" + valor + "]";
@@ -58,5 +72,7 @@ public class Leitura {
     public Object getLocalDateTime() {
         return null;
     }
+
+  
     
 }

@@ -1,7 +1,18 @@
 package br.edu.ifsp.wellbeing.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Aluno extends Usuario implements AtribuicaoSensores {
-    private String endereco, prontuario, email;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String endereco;
+    private String prontuario;
+    private String email;
 
     public Aluno(String nome, String CPF, String endereco, String prontuario, String email) {
         super(nome,CPF);
@@ -11,12 +22,8 @@ public class Aluno extends Usuario implements AtribuicaoSensores {
     }
 
     //métodos da classe Interface AtribuicaoSensores
-    Sensor monitorando;
-    @Override
-    public void adicionarSensor(Sensor sensor) {
-        monitorando = sensor;
-    }
 
+ 
     @Override
     public void exibirRelatorio() {
         for(int i=0 ; i<relatorios.size() ; i++){
@@ -39,6 +46,14 @@ public class Aluno extends Usuario implements AtribuicaoSensores {
         }
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }     
+        
     public String getEndereco() {
         return endereco;
     }
@@ -66,6 +81,11 @@ public class Aluno extends Usuario implements AtribuicaoSensores {
     @Override
     public String toString() {
         return "Aluno: " + nome + "\nCPF: " + CPF + "\nEndereco: " + endereco + "\nProntuario: " + prontuario + "\nEmail: " + email;
-    }     
-    
+    }
+
+    @Override
+    public void adicionarSensor(Sensor sensor) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'adicionarSensor'");
+    }
 }
