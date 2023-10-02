@@ -50,7 +50,6 @@ public class LeituraDAO {
 
     //samuel
     public List<Leitura> getByDay(Integer dia){
-        
         List<Leitura> todasLeituras = Database.recupLeituras();
         System.out.println(todasLeituras);
         List<Leitura> selecionadas = new ArrayList<>();

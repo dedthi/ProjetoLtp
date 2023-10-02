@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import javax.persistence.Id;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,24 +20,33 @@ import org.springframework.web.bind.annotation.RestController;
 import br.edu.ifsp.wellbeing.Database;
 import br.edu.ifsp.wellbeing.model.Leitura;
 import br.edu.ifsp.wellbeing.model.LeituraDAO;
-import br.edu.ifsp.wellbeing.model.Relatorio;
+import br.edu.ifsp.wellbeing.model.Usuario;
+import br.edu.ifsp.wellbeing.repository.LeituraRepository;
+import br.edu.ifsp.wellbeing.repository.RelatorioRepository;
+
 
 @RestController
 public class LeituraController {
   // samuel
-  @GetMapping("wellbeing/leitura/{dia}")
-  public List<Leitura> consultLeitura(
-      @PathVariable("dia") Integer dia) {
-    System.out.println(dia);
-    List<Leitura> leituras = LeituraDAO.getInstance().getByDay(dia);
-    return leituras;
-  }
+  @Autowired
+  LeituraRepository leituraRepository;
+  // @GetMapping("wellbeing/leitura/{id}")
+  // public List<Leitura> consultLeitura(@PathVariable("id") Long id){
+  //   // return (List<Leitura>)leituraRepository.findById(id);
+    
+  // }
+  // @GetMapping("wellbeing/leitura/{dia}")
+  // public List<Leitura> consultLeitura(
+  //     @PathVariable("dia") Integer dia) {
+  //   System.out.println(dia);
+  //   List<Leitura> leituras = LeituraDAO.getInstance().getByDay(dia);
+  //   return leituras;
+  // }
 
   // samuel
   @PostMapping("wellbeing/leitura/cadastrar")
-  public void addLeitura(@RequestBody Leitura novaleitura) {
-    Database.addDadoLeitura(novaleitura);
-
+  public Leitura addLeitura(@RequestBody Leitura novaleitura) {
+    return leituraRepository.save(novaleitura);
   }
 
   // samuel
