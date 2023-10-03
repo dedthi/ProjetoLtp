@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import javax.persistence.Id;
 
@@ -30,11 +31,11 @@ public class LeituraController {
   // samuel
   @Autowired
   LeituraRepository leituraRepository;
-  // @GetMapping("wellbeing/leitura/{id}")
-  // public List<Leitura> consultLeitura(@PathVariable("id") Long id){
-  //   // return (List<Leitura>)leituraRepository.findById(id);
+  @GetMapping("wellbeing/leitura/{id}")
+  public Optional<Leitura> consultLeitura(@PathVariable("id") Long id){
+    return (Optional<Leitura>)leituraRepository.findById(id);
     
-  // }
+  }
   // @GetMapping("wellbeing/leitura/{dia}")
   // public List<Leitura> consultLeitura(
   //     @PathVariable("dia") Integer dia) {
