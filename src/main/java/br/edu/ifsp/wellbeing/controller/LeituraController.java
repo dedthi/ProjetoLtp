@@ -39,14 +39,16 @@ public class LeituraController {
  
   // samuel
   @PostMapping("wellbeing/leitura/cadastrar")
-  public Leitura addLeitura(@RequestBody Leitura novaleitura) {
-    return leituraRepository.save(novaleitura);
+  public String addLeitura(@RequestBody Leitura novaleitura) {
+    leituraRepository.save(novaleitura);
+    return "Cadastrado com sucesso";
   }
 
   // samuel
   @DeleteMapping("wellbeing/leitura/deletar/{id}")
-  public void  deleteLeitura(@PathVariable("id") Long id) {
+  public String deleteLeitura(@PathVariable("id") Long id) {
      leituraRepository.deleteById(id);
+     return "Deletado com sucesso";
   }
   
 }
