@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.ifsp.wellbeing.Database;
 import br.edu.ifsp.wellbeing.model.Aluno;
-import br.edu.ifsp.wellbeing.model.AlunoDAO;
 import br.edu.ifsp.wellbeing.model.Relatorio;
 
 @RestController
@@ -22,10 +21,10 @@ public class AlunoController {
 	// thiago
 	// https://localhost:8080/listar/alunos
 	@GetMapping("wellbeing/alunos/listar")
-	public List<Aluno> recuperarAlunos() {
-		AlunoDAO alunoDAO = AlunoDAO.getInstance();
-		return alunoDAO.read();
-	}
+	// public List<Aluno> recuperarAlunos() {
+	// 	AlunoDAO alunoDAO = AlunoDAO.getInstance();
+	// 	return alunoDAO.read();
+	// }
 
 	// https://localhost:8080/wellbeing/alunos/cadastrar
 	@PostMapping("wellbeing/alunos/cadastrar")
@@ -48,12 +47,12 @@ public class AlunoController {
 
 	// vitor
 	// https://localhost:8080/recuperar/{nome}
-	@GetMapping("/recuperar/{nome}")
-	public Aluno endPoint2(
-			@PathVariable("nome") String nome) {
-		System.out.println(nome);
-		Aluno alunos = AlunoDAO.getInstance().getByName(nome);
-		return alunos;
+// 	@GetMapping("/recuperar/{nome}")
+// 	public Aluno endPoint2(
+// 			@PathVariable("nome") String nome) {
+// 		System.out.println(nome);
+// 		Aluno alunos = AlunoDAO.getInstance().getByName(nome);
+// 		return alunos;
 
-	}
-}
+// 	}
+ }

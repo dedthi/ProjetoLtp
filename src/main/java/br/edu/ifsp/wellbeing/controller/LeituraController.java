@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.ifsp.wellbeing.Database;
 import br.edu.ifsp.wellbeing.model.Leitura;
-import br.edu.ifsp.wellbeing.model.LeituraDAO;
-import br.edu.ifsp.wellbeing.model.Usuario;
+// import br.edu.ifsp.wellbeing.model.LeituraDAO;
+// import br.edu.ifsp.wellbeing.model.Usuario;
 import br.edu.ifsp.wellbeing.repository.LeituraRepository;
 import br.edu.ifsp.wellbeing.repository.RelatorioRepository;
 
@@ -29,6 +29,10 @@ import br.edu.ifsp.wellbeing.repository.RelatorioRepository;
 @RestController
 public class LeituraController {
   // samuel
+  private static ArrayList<Leitura> leituras;
+  public static ArrayList<Leitura> recupLeituras(){
+    return leituras;
+}
   @Autowired
   LeituraRepository leituraRepository;
   @GetMapping("wellbeing/leitura/{id}")
@@ -39,7 +43,6 @@ public class LeituraController {
   // @GetMapping("wellbeing/leitura/{dia}")
   // public List<Leitura> consultLeitura(
   //     @PathVariable("dia") Integer dia) {
-  //   System.out.println(dia);
   //   List<Leitura> leituras = LeituraDAO.getInstance().getByDay(dia);
   //   return leituras;
   // }
@@ -51,37 +54,22 @@ public class LeituraController {
   }
 
   // samuel
-  @DeleteMapping("wellbeing/leitura/deletar/{dia}")
-  public Leitura deleteLeitura(
-      @PathVariable("dia") Integer dia) {
-    List<Leitura> leituras = LeituraDAO.getInstance().getByDay(dia);
-    List<Leitura> listaLeituras = Database.recupLeituras();
-    for (Leitura leitura : listaLeituras) {
-      if (leitura.getDataEntrada().getDayOfMonth() == dia) {
-        Database.delDadoLeitura(leitura);
-        return leitura;
-      }
-    }
-    return null;
-  }
+  // @DeleteMapping("wellbeing/leitura/deletar/{dia}")
+  // public Leitura deleteLeitura(
+  //     @PathVariable("dia") Integer dia) {
+  //   List<Leitura> leituras = LeituraDAO.getInstance().getByDay(dia);
+  //   List<Leitura> listaLeituras = Database.recupLeituras();
+  //   for (Leitura leitura : listaLeituras) {
+  //     if (leitura.getDataEntrada().getDayOfMonth() == dia) {
+  //       Database.delDadoLeitura(leitura);
+  //       return leitura;
+  //     }
+  //   }
+  //   return null;
+  // }
 
   // Stein
   //hora e dia
-@GetMapping("wellbeing/leitura/{dia}/{hora}") 
-public ResponseEntity<List<Leitura>> consultLeitura(
-      @PathVariable("dia") Integer dia,
-      @PathVariable("hora") Integer hora) {
-    // Verifica se os parâmetros são válidos
-    if (dia <= 0 || hora <= 0) {
-      return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-    }
-    // Obtém as leituras
-    List<Leitura> leituras = (List<Leitura>) ((LeituraDAO) LeituraDAO.getInstance().getByDay(dia)).getByHour(hora); //getByHour(hora) estava morte 
-                                                                                                                    //e meti umas correcao do propio sistema, 
-                                                                                                                    //o que resultou em "pegavel"
-    // Retorna a resposta
-    return ResponseEntity.ok(leituras);
-  }
 
  
 
