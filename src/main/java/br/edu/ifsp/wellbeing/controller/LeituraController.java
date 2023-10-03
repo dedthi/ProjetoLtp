@@ -29,10 +29,6 @@ import br.edu.ifsp.wellbeing.repository.RelatorioRepository;
 @RestController
 public class LeituraController {
   // samuel
-  private static ArrayList<Leitura> leituras;
-  public static ArrayList<Leitura> recupLeituras(){
-    return leituras;
-}
   @Autowired
   LeituraRepository leituraRepository;
   @GetMapping("wellbeing/leitura/{id}")
@@ -40,13 +36,7 @@ public class LeituraController {
     return (Optional<Leitura>)leituraRepository.findById(id);
     
   }
-  // @GetMapping("wellbeing/leitura/{dia}")
-  // public List<Leitura> consultLeitura(
-  //     @PathVariable("dia") Integer dia) {
-  //   List<Leitura> leituras = LeituraDAO.getInstance().getByDay(dia);
-  //   return leituras;
-  // }
-
+ 
   // samuel
   @PostMapping("wellbeing/leitura/cadastrar")
   public Leitura addLeitura(@RequestBody Leitura novaleitura) {
@@ -54,24 +44,9 @@ public class LeituraController {
   }
 
   // samuel
-  // @DeleteMapping("wellbeing/leitura/deletar/{dia}")
-  // public Leitura deleteLeitura(
-  //     @PathVariable("dia") Integer dia) {
-  //   List<Leitura> leituras = LeituraDAO.getInstance().getByDay(dia);
-  //   List<Leitura> listaLeituras = Database.recupLeituras();
-  //   for (Leitura leitura : listaLeituras) {
-  //     if (leitura.getDataEntrada().getDayOfMonth() == dia) {
-  //       Database.delDadoLeitura(leitura);
-  //       return leitura;
-  //     }
-  //   }
-  //   return null;
-  // }
-
-  // Stein
-  //hora e dia
-
- 
-
+  @DeleteMapping("wellbeing/leitura/deletar/{id}")
+  public void  deleteLeitura(@PathVariable("id") Long id) {
+     leituraRepository.deleteById(id);
+  }
   
 }
