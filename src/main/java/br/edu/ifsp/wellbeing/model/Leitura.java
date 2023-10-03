@@ -72,11 +72,6 @@ public class Leitura {
     public void setHora(LocalTime hora) {
         this.hora = hora;
     }
-
-    public Object getLocalDateTime() {
-        return null;
-    }
-
   
     
 }
