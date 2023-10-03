@@ -14,14 +14,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.edu.ifsp.wellbeing.model.Leitura;
 import br.edu.ifsp.wellbeing.model.Relatorio;
 import br.edu.ifsp.wellbeing.repository.RelatorioRepository;
 
 @RestController
 
 public class RelatorioController {
-
     private List<Relatorio> listaRelatorios = new ArrayList<>();
 
     // STEIN

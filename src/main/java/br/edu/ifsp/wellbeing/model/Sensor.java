@@ -9,9 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.yaml.snakeyaml.events.Event.ID;
-
-
 @Entity
 public class Sensor extends Especificacoes{    
     @Id

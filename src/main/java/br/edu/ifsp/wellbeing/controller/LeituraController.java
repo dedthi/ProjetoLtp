@@ -23,8 +23,6 @@ import br.edu.ifsp.wellbeing.model.Leitura;
 // import br.edu.ifsp.wellbeing.model.LeituraDAO;
 // import br.edu.ifsp.wellbeing.model.Usuario;
 import br.edu.ifsp.wellbeing.repository.LeituraRepository;
-import br.edu.ifsp.wellbeing.repository.RelatorioRepository;
-
 
 @RestController
 public class LeituraController {

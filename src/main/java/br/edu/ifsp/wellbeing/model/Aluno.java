@@ -5,8 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
-
 @Entity
 public class Aluno extends Usuario implements AtribuicaoSensores {
     @Id
@@ -23,9 +21,6 @@ public class Aluno extends Usuario implements AtribuicaoSensores {
         this.email = email;
     }
 
-    //métodos da classe Interface AtribuicaoSensores
-
- 
     @Override
     public void exibirRelatorio() {
         for(int i=0 ; i<relatorios.size() ; i++){
