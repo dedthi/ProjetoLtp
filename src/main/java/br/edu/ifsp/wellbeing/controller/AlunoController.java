@@ -3,7 +3,9 @@ package br.edu.ifsp.wellbeing.controller;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,13 +16,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.ifsp.wellbeing.Database;
 import br.edu.ifsp.wellbeing.model.Aluno;
-import br.edu.ifsp.wellbeing.model.Relatorio;
+import br.edu.ifsp.wellbeing.repository.AlunoRepository;
 
 @RestController
 public class AlunoController {
 	// thiago
-	// https://localhost:8080/listar/alunos
+	// https://localhost:8080/wellbeing/alunos/listar
+	@Autowired
+    AlunoRepository alunoRepository;
 	@GetMapping("wellbeing/alunos/listar")
+    public List<Aluno> consultAluno() {
+    	return (List<Aluno>) alunoRepository.findAll();
+    }
 	// public List<Aluno> recuperarAlunos() {
 	// 	AlunoDAO alunoDAO = AlunoDAO.getInstance();
 	// 	return alunoDAO.read();
