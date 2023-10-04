@@ -20,6 +20,11 @@ public class Sensor {
     private String garantia;
     ArrayList<Sensor> sensoresMonitorados;
 
+    
+
+    public Sensor() {
+    }
+
     public Sensor(String codigo, double preco, String nome, String tipoSensor, String dataEntrada, String garantia) {
         this.nome = nome;
         this.tipoSensor = tipoSensor;
