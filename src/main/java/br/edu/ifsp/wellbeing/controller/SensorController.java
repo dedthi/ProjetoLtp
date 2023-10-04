@@ -20,7 +20,7 @@ public class SensorController {
   // get vitor
   @Autowired
   SensorRepository sensorRepository;
-  @GetMapping("wellbeing/sensor/")
+  @GetMapping("wellbeing/sensor/listar")
   public List<Sensor> consultSensor(){
     return (List<Sensor>) sensorRepository.findAll();
   }

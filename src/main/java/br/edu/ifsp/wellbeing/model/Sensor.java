@@ -10,7 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Sensor extends Especificacoes{    
+public class Sensor {    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,7 +21,6 @@ public class Sensor extends Especificacoes{
     ArrayList<Sensor> sensoresMonitorados;
 
     public Sensor(String codigo, double preco, String nome, String tipoSensor, String dataEntrada, String garantia) {
-        super(codigo, preco);
         this.nome = nome;
         this.tipoSensor = tipoSensor;
         this.dataEntrada = dataEntrada;
