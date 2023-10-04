@@ -7,12 +7,13 @@ import javax.persistence.Id;
 
 @Entity
 public class Aluno extends Usuario implements AtribuicaoSensores {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String endereco;
     private String prontuario;
     private String email;
+    
+    public Aluno() {
+        super();
+    }
 
     public Aluno(String nome, String CPF, String endereco, String prontuario, String email) {
         super(nome,CPF);
@@ -42,14 +43,6 @@ public class Aluno extends Usuario implements AtribuicaoSensores {
             }
         }
     }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }     
         
     public String getEndereco() {
         return endereco;
