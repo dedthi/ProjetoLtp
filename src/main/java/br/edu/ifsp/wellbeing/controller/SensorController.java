@@ -27,14 +27,16 @@ public class SensorController {
 
   // post vitor
   @PostMapping("wellbeing/sensor/cadastrar")
-  public Sensor addSensor(@RequestBody Sensor novoSensor) {
-    return sensorRepository.save(novoSensor);
+  public String addSensor(@RequestBody Sensor novoSensor) {
+    sensorRepository.save(novoSensor);
+    return "Sensor cadastrado com Sucesso";
   }
 
   // delete vitor
   @DeleteMapping("wellbeing/sensor/deletar/{id}")
-  public void  deleteSensor(@PathVariable("id") Long id) {
+  public String  deleteSensor(@PathVariable("id") Long id) {
      sensorRepository.deleteById(id);
+     return "Deletado com sucesso";
   }
  
 }
