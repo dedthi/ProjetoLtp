@@ -22,9 +22,14 @@ public class WebSecurityConfig {
             .httpBasic(Customizer.withDefaults())
             .authorizeHttpRequests(
                 authorize -> authorize.requestMatchers(HttpMethod.POST, "wellbeing/alunos/cadastrar").permitAll()
-                                      .requestMatchers(HttpMethod.GET, "wellbeing/alunos/listar").permitAll())
+                                      .requestMatchers(HttpMethod.POST, "wellbeing/leitura/cadastrar").permitAll()
+                                      .requestMatchers(HttpMethod.POST, "wellbeing/relatorio/cadastrar\"").permitAll()
+                                      .requestMatchers(HttpMethod.POST, "wellbeing/sensor/cadastrar").permitAll())
             .authorizeHttpRequests(
-                authorize -> authorize.requestMatchers(HttpMethod.GET, "wellbeing/leitura/{id}").authenticated());
+                authorize -> authorize.requestMatchers(HttpMethod.GET, "wellbeing/alunos/lista").authenticated()
+                                      .requestMatchers(HttpMethod.GET, "wellbeing/leitura/{id}").authenticated()
+                                      .requestMatchers(HttpMethod.GET, "wellbeing/relatorio/{id}").authenticated()
+                                      .requestMatchers(HttpMethod.GET, "wellbeing/sensor/listar").authenticated());
         return http.build();
     }
 
