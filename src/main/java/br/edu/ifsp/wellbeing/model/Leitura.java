@@ -18,6 +18,7 @@ public class Leitura {
     private double valor;
     private String descricao;
     private LocalTime hora;
+    
     public Leitura(){
     }
 
