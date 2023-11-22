@@ -1,9 +1,16 @@
 package br.edu.ifsp.wellbeing.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class Aluno extends Usuario implements AtribuicaoSensores {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    private String password;
     private String endereco;
     private String prontuario;
     private String email;
@@ -12,8 +19,9 @@ public class Aluno extends Usuario implements AtribuicaoSensores {
         super();
     }
 
-    public Aluno(String nome, String CPF, String endereco, String prontuario, String email) {
+    public Aluno(String nome, String CPF, String password, String endereco, String prontuario, String email) {
         super(nome,CPF);
+        this.password = password;
         this.endereco = endereco;
         this.prontuario = prontuario;
         this.email = email;
@@ -40,7 +48,23 @@ public class Aluno extends Usuario implements AtribuicaoSensores {
             }
         }
     }
-        
+    
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String getEndereco() {
         return endereco;
     }

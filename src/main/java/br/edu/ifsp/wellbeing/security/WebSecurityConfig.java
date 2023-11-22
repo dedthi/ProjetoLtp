@@ -9,8 +9,12 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+
+import br.edu.ifsp.wellbeing.security.service.MyAlunoDetailsService;
 
 @Configuration
 @EnableWebSecurity
@@ -34,13 +38,23 @@ public class WebSecurityConfig {
     }
 
     @Bean
-    public UserDetailsService userDetailsService(){
-        UserDetails user = User.withDefaultPasswordEncoder()
-        .username("ifsp")
-        .password("1234")
-        .build();
-
-        return new InMemoryUserDetailsManager(user);
+    public PasswordEncoder passwordEncoder(){
+            return new BCryptPasswordEncoder();
     }
+
+    @Bean
+    public UserDetailsService myAlunoDetailsService() {
+        return new MyAlunoDetailsService();
+    }
+    
+    // @Bean
+    // public UserDetailsService myUserDetailsService(){
+    //     UserDetails user = User.withDefaultPasswordEncoder()
+    //     .username("ifsp")
+    //     .password("1234")
+    //     .build();
+
+    //     return new InMemoryUserDetailsManager(user);
+    // }
     
 }
