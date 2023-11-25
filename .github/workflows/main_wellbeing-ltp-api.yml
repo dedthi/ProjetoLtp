@@ -8,17 +8,17 @@ on:
     branches:
       - main
   workflow_dispatch:
-
+env:
+  using: 'node16'
+  main: 'github-action-runtime/index.js'
+  
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/checkout@main
-        with:
-            node-version: 16
-
+      
       - name: Set up Java version
         uses: actions/setup-java@v1
         with:
