@@ -21,7 +21,7 @@ public class LoadDataInDb implements CommandLineRunner{
     @Override
     public void run(String... args) throws Exception {
         ArrayList<Aluno> alunosNovos = new ArrayList<>();
-        alunosNovos.add(new Aluno("Thiago", "741328-3", passwordEncoder.encode("ifsp1234"), "Bragança", "Bp301374", "thiago.luiz@aluno.ifsp"));
+        alunosNovos.add(new Aluno("thiago", "741328-3", passwordEncoder.encode("ifsp1234"), "Bragança", "Bp301374", "thiago.luiz@aluno.ifsp"));
 
         alunoRepository.saveAll(alunosNovos);
     }

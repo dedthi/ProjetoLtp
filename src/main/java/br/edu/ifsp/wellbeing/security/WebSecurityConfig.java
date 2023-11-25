@@ -21,8 +21,9 @@ import br.edu.ifsp.wellbeing.security.service.MyAlunoDetailsService;
 public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
-        http.csrf().disable().requiresChannel(
-            channel -> channel.anyRequest().requiresSecure())
+        http.csrf().disable()
+        // .requiresChannel(
+        //     channel -> channel.anyRequest().requiresSecure())
             .httpBasic(Customizer.withDefaults())
             .authorizeHttpRequests(
                 authorize -> authorize.requestMatchers(HttpMethod.POST, "wellbeing/alunos/cadastrar").permitAll()
