@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 
 @Entity
@@ -18,6 +19,8 @@ public class Leitura {
     private double valor;
     private String descricao;
     private LocalTime hora;
+    @ManyToOne
+    private Usuario usuario;
     
     public Leitura(){
     }
@@ -71,6 +74,12 @@ public class Leitura {
     public void setHora(LocalTime hora) {
         this.hora = hora;
     }
-  
-    
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 }

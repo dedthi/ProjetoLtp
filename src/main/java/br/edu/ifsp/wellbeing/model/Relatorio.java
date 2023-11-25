@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 
 @Entity
@@ -16,8 +17,10 @@ public class Relatorio{
     private String descricao;
     private String data;
     private String status;
-    ArrayList<Relatorio> relatorios;
-    ArrayList<Leitura> leituras;
+    @ManyToOne
+    private Usuario usuario;
+    // ArrayList<Relatorio> relatorios;
+    // ArrayList<Leitura> leituras;
 
     public Relatorio(String descricao, String data, String status) {
         this.descricao = descricao;
@@ -69,9 +72,11 @@ public class Relatorio{
         this.status = status;
     }
 
-   
+    public Usuario getUsuario() {
+        return usuario;
+    }
 
-
-    
-
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 }

@@ -13,10 +13,10 @@ public class MyAlunoDetailsService implements UserDetailsService{
     AlunoRepository alunoRepository;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Aluno alunoCredenciais = alunoRepository.findByUsername(username);
+    public UserDetails loadUserByUsername(String nome) throws UsernameNotFoundException {
+        Aluno alunoCredenciais = alunoRepository.findByNome(nome);
         if(alunoCredenciais == null)
-            throw new UsernameNotFoundException(username);
+            throw new UsernameNotFoundException(nome);
         return new MyAlunoDetails(alunoCredenciais);
     }
     

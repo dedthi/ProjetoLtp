@@ -8,6 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
+import jakarta.persistence.OneToMany;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -17,7 +18,9 @@ public abstract class Usuario {
     private Long id;
     protected String nome;
     protected String CPF;
+    @OneToMany(mappedBy = "usuario")
     ArrayList<Relatorio> relatorios;
+    @OneToMany(mappedBy = "usuario")
     ArrayList<Leitura> leituras;
 
     public Usuario(){

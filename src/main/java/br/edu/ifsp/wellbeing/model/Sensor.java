@@ -8,6 +8,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Sensor {    
@@ -18,9 +20,11 @@ public class Sensor {
     private String tipoSensor;
     private String dataEntrada;
     private String garantia;
+    @OneToMany(mappedBy = "sensorPai")
     ArrayList<Sensor> sensoresMonitorados;
 
-    
+    @ManyToOne
+    private Sensor sensorPai;    
 
     public Sensor() {
     }
@@ -90,4 +94,21 @@ public class Sensor {
         this.garantia = garantia;
     }
 
+    public ArrayList<Sensor> getSensoresMonitorados() {
+        return sensoresMonitorados;
+    }
+
+    public void setSensoresMonitorados(ArrayList<Sensor> sensoresMonitorados) {
+        this.sensoresMonitorados = sensoresMonitorados;
+    }
+
+    public Sensor getSensorPai() {
+        return sensorPai;
+    }
+
+    public void setSensorPai(Sensor sensorPai) {
+        this.sensorPai = sensorPai;
+    }
+
+    
 }
