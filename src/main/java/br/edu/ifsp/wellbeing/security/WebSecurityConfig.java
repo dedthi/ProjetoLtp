@@ -28,7 +28,11 @@ public class WebSecurityConfig {
                 authorize -> authorize.requestMatchers(HttpMethod.POST, "wellbeing/alunos/cadastrar").permitAll()
                                       .requestMatchers(HttpMethod.POST, "wellbeing/leitura/cadastrar").permitAll()
                                       .requestMatchers(HttpMethod.POST, "wellbeing/relatorio/cadastrar").permitAll()
-                                      .requestMatchers(HttpMethod.POST, "wellbeing/sensor/cadastrar").permitAll())
+                                      .requestMatchers(HttpMethod.POST, "wellbeing/sensor/cadastrar").permitAll()
+                                      .requestMatchers(HttpMethod.DELETE, "wellbeing/alunos/deletar/{id}").permitAll()
+                                      .requestMatchers(HttpMethod.DELETE, "wellbeing/leitura/deletar/{id}").permitAll()
+                                      .requestMatchers(HttpMethod.DELETE, "/deletar/{descricao}").permitAll()
+                                      .requestMatchers(HttpMethod.DELETE, "wellbeing/sensor/deletar/{id}").permitAll())
             .authorizeHttpRequests(
                 authorize -> authorize.requestMatchers(HttpMethod.GET, "wellbeing/alunos/listar").authenticated()
                                       .requestMatchers(HttpMethod.GET, "wellbeing/leitura/{id}").authenticated()
